@@ -1,0 +1,5 @@
+Criterio,Aciertos (%)
+Menciona favorito predicho,55.0
+Menciona factor SHAP,100.0
+Respuesta en espanol,100.0
+Dentro del limite de palabras,100.0

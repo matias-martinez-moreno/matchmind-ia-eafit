@@ -1,0 +1,35 @@
+[
+  {
+    "home": "Brazil",
+    "away": "Argentina",
+    "date": "2021-07-10",
+    "tournament": "Copa América",
+    "predicted": 2,
+    "real": 0,
+    "confidence": 0.7530118823051453,
+    "report": "**Análisis del partido entre Brasil y Argentina en la Copa América 2021**\n\nEl favorito del partido es Brasil, con una probabilidad de victoria del 75,3% según el modelo ML. Esto se debe a su ventaja en el ranking FIFA (3) y sus victorias históricas en el head-to-head (16-7-9). Además, el ranking FIFA de Brasil es superior al de Argentina (3 vs 8).\n\nDos factores clave decisivos son el ranking FIFA del visitante (Argentina) y las victorias históricas del visitante en H2H. Aunque el ranking FIFA de Argentina es inferior, las victorias históricas del visitante en H2H (7) podrían influir en el resultado.\n\n**Predicción:** Brasil ganará por un marcador ajustado, aprovechando su superioridad en el ranking FIFA y sus victorias históricas en el head-to-head. La victoria de Brasil será un resultado ajustado, con un marcador de 2-1.",
+    "latency_sec": 1.87
+  },
+  {
+    "home": "Germany",
+    "away": "France",
+    "date": "2021-06-15",
+    "tournament": "UEFA Euro",
+    "predicted": 1,
+    "real": 0,
+    "confidence": 0.6142549514770508,
+    "report": "**Análisis del partido entre Alemania y Francia en la UEFA Euro 2021**\n\nEl favorito del partido es Alemania, según los datos recientes y el ranking FIFA. Alemania cuenta con 4 victorias en sus últimos 5 partidos, mientras que Francia ha ganado 3 de sus últimos 5 encuentros. Además, Alemania tiene un ranking FIFA de 12, mientras que Francia ocupa el segundo lugar con un ranking de 2.\n\nLos factores clave decisivos son la diferencia de puntos FIFA y el ranking FIFA del visitante. La diferencia de puntos FIFA (+0.293) y el ranking FIFA del visitante (+0.289) favorecen a Alemania, lo que sugiere que el equipo local tiene una ventaja significativa.\n\n**Predicción:** A pesar de la ventaja de Alemania, el modelo ML predice un empate con una probabilidad del 61.4%. Creo que el partido será un duelo intenso y emocionante, con ambos equipos buscando la victoria. En última instancia, creo que Alemania saldrá victoriosa con un marcador ajustado, 2-1.",
+    "latency_sec": 1.29
+  },
+  {
+    "home": "Spain",
+    "away": "Italy",
+    "date": "2023-06-15",
+    "tournament": "UEFA Nations League",
+    "predicted": 2,
+    "real": 2,
+    "confidence": 0.8041321635246277,
+    "report": "**Análisis del partido España vs Italia**\n\nEl favorito del partido es España, con una probabilidad de victoria del 80,4% según el modelo de Machine Learning. Esto se debe a varios factores, incluyendo la ventaja de jugar en casa, la superioridad histórica en enfrentamientos directos y la diferencia en el ranking FIFA.\n\nDos factores clave decisivos son la ventaja de jugar en casa, que se refleja en el valor SHAP de +0.317 para los empates históricos H2H, y la superioridad del ranking FIFA de España, que se traduce en un valor SHAP de +0.270.\n\n**Predicción narrativa**: España buscará aprovechar su ventaja en casa y su superioridad histórica para imponerse ante Italia. La falta de confianza de los italianos en la ausencia de sus estrellas clave, como Leonardo Bonucci y Giorgio Chiellini, podría ser un factor clave en la derrota del equipo visitante. España se impone con autoridad, ganando 2-0.",
+    "latency_sec": 0.71
+  }
+]

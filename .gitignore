@@ -1,0 +1,50 @@
+# Entornos virtuales
+venv/
+env/
+.venv/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Datos pesados (no commitear)
+data/raw/*.csv
+data/raw/*.json
+data/raw/*.parquet
+data/processed/*.pkl
+data/processed/*.csv
+
+# Modelos pesados (subir a HF/Drive si >100MB)
+models/checkpoints/*.pkl
+models/checkpoints/*.pth
+models/checkpoints/*.bin
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code (contexto interno, no compartir)
+.claude/
+CLAUDE.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Logs
+*.log
+logs/

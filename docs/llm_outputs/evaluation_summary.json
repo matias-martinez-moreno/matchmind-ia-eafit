@@ -1,0 +1,293 @@
+{
+  "n_cases": 20,
+  "metrics": {
+    "mentions_favorite": 55.0,
+    "mentions_factor": 100.0,
+    "is_spanish": 100.0,
+    "within_length": 100.0
+  },
+  "avg_words": 134.4,
+  "model_groq": "llama-3.1-8b-instant",
+  "details": [
+    {
+      "idx": 0,
+      "match": "Barbados vs Canada",
+      "date": "2020-01-07",
+      "pred": 0,
+      "favorite": "Canada",
+      "checks": {
+        "mentions_favorite": false,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 147
+    },
+    {
+      "idx": 309,
+      "match": "Switzerland vs Ukraine",
+      "date": "2020-11-17",
+      "pred": 1,
+      "favorite": "empate",
+      "checks": {
+        "mentions_favorite": true,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 126
+    },
+    {
+      "idx": 618,
+      "match": "Nicaragua vs Belize",
+      "date": "2021-06-04",
+      "pred": 2,
+      "favorite": "Nicaragua",
+      "checks": {
+        "mentions_favorite": true,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 117
+    },
+    {
+      "idx": 927,
+      "match": "Moldova vs Austria",
+      "date": "2021-09-01",
+      "pred": 0,
+      "favorite": "Austria",
+      "checks": {
+        "mentions_favorite": true,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 139
+    },
+    {
+      "idx": 1236,
+      "match": "Portugal vs Luxembourg",
+      "date": "2021-10-12",
+      "pred": 2,
+      "favorite": "Portugal",
+      "checks": {
+        "mentions_favorite": true,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 113
+    },
+    {
+      "idx": 1546,
+      "match": "Cameroon vs Gambia",
+      "date": "2022-01-29",
+      "pred": 2,
+      "favorite": "Cameroon",
+      "checks": {
+        "mentions_favorite": false,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 112
+    },
+    {
+      "idx": 1855,
+      "match": "Dominican Republic vs French Guiana",
+      "date": "2022-06-05",
+      "pred": 2,
+      "favorite": "Dominican Republic",
+      "checks": {
+        "mentions_favorite": false,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 154
+    },
+    {
+      "idx": 2164,
+      "match": "Kyrgyzstan vs Russia",
+      "date": "2022-09-24",
+      "pred": 2,
+      "favorite": "Kyrgyzstan",
+      "checks": {
+        "mentions_favorite": false,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 100
+    },
+    {
+      "idx": 2473,
+      "match": "Fiji vs Vanuatu",
+      "date": "2023-03-20",
+      "pred": 1,
+      "favorite": "empate",
+      "checks": {
+        "mentions_favorite": true,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 123
+    },
+    {
+      "idx": 2782,
+      "match": "China PR vs Palestine",
+      "date": "2023-06-20",
+      "pred": 2,
+      "favorite": "China PR",
+      "checks": {
+        "mentions_favorite": true,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 154
+    },
+    {
+      "idx": 3092,
+      "match": "Cameroon vs Burundi",
+      "date": "2023-09-12",
+      "pred": 2,
+      "favorite": "Cameroon",
+      "checks": {
+        "mentions_favorite": false,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 131
+    },
+    {
+      "idx": 3401,
+      "match": "Northern Ireland vs Denmark",
+      "date": "2023-11-20",
+      "pred": 0,
+      "favorite": "Denmark",
+      "checks": {
+        "mentions_favorite": false,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 113
+    },
+    {
+      "idx": 3710,
+      "match": "Senegal vs Gabon",
+      "date": "2024-03-22",
+      "pred": 2,
+      "favorite": "Senegal",
+      "checks": {
+        "mentions_favorite": true,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 178
+    },
+    {
+      "idx": 4019,
+      "match": "Spain vs Italy",
+      "date": "2024-06-20",
+      "pred": 2,
+      "favorite": "Spain",
+      "checks": {
+        "mentions_favorite": false,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 131
+    },
+    {
+      "idx": 4328,
+      "match": "Jordan vs South Korea",
+      "date": "2024-10-10",
+      "pred": 0,
+      "favorite": "South Korea",
+      "checks": {
+        "mentions_favorite": false,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 148
+    },
+    {
+      "idx": 4638,
+      "match": "Dominican Republic vs Bermuda",
+      "date": "2024-11-19",
+      "pred": 2,
+      "favorite": "Dominican Republic",
+      "checks": {
+        "mentions_favorite": true,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 130
+    },
+    {
+      "idx": 4947,
+      "match": "Cambodia vs Tajikistan",
+      "date": "2025-06-05",
+      "pred": 0,
+      "favorite": "Tajikistan",
+      "checks": {
+        "mentions_favorite": true,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 120
+    },
+    {
+      "idx": 5256,
+      "match": "United States vs Japan",
+      "date": "2025-09-09",
+      "pred": 2,
+      "favorite": "United States",
+      "checks": {
+        "mentions_favorite": false,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 127
+    },
+    {
+      "idx": 5565,
+      "match": "Hungary vs Republic of Ireland",
+      "date": "2025-11-16",
+      "pred": 1,
+      "favorite": "empate",
+      "checks": {
+        "mentions_favorite": true,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 185
+    },
+    {
+      "idx": 5875,
+      "match": "Kazakhstan vs Comoros",
+      "date": "2026-03-31",
+      "pred": 2,
+      "favorite": "Kazakhstan",
+      "checks": {
+        "mentions_favorite": true,
+        "mentions_factor": true,
+        "is_spanish": true,
+        "within_length": true
+      },
+      "report_length_words": 139
+    }
+  ]
+}
