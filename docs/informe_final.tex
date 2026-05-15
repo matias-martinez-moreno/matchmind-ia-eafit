@@ -117,7 +117,7 @@
   {\small\color{eafitgray}
     Escuela de Ciencias Aplicadas e Ingenieria - Universidad EAFIT\\
     Curso: Inteligencia Artificial - Semestre 2026-1\\
-    \textit{Entrega: 14 de mayo de 2026}\\[4pt]
+    \textit{Ventana de entrega: 19-22 de mayo de 2026}\\[4pt]
     \textbf{Repositorio:}
     \url{https://github.com/matias-martinez-moreno/matchmind-ia-eafit}
   }\\[6pt]
@@ -466,6 +466,24 @@ El resultado es consistente con la dificultad intrinseca del problema. En la lit
 %% ==========================================================
 
 Construimos un sistema end-to-end de prediccion de futbol que combina XGBoost, SHAP y un LLM. El modelo final alcanza F1-macro = 0.452 en test, un 110\% superior al baseline trivial, y el LLM genera reportes coherentes en espanol en menos de 2 segundos. La feature dominante es la diferencia de ranking FIFA, lo cual confirma intuiciones de dominio. La principal limitacion (subprediccion de empates) es esperable dado el caracter ``de frontera'' de la clase y abre oportunidades de trabajo futuro concretas. Todo el codigo es reproducible: descarga de datos, feature engineering, entrenamiento, evaluacion y demo Streamlit estan documentados en el repositorio.
+
+%% ==========================================================
+\section*{Uso de IA Generativa en el Desarrollo}
+\label{sec:ia_dev}
+
+Adicional al componente generativo del sistema construido (Llama-3.1-8b via Groq, encargado de redactar los reportes tacticos finales), durante la ingenieria del proyecto se utilizaron asistentes de IA basados en LLM como apoyo metodologico y de codificacion. Documentamos su rol explicitamente para mantener trazabilidad academica y separar claramente lo que produjo el equipo de lo que sugirio la IA.
+
+\subsection*{Modelos de asistencia empleados}
+
+\textbf{Claude Opus 4.7} (Anthropic) se reservo para tareas de razonamiento extenso y decisiones tecnicas de alto impacto. Es el modelo mas capaz de la familia Claude 4.X, con razonamiento extendido, ventana de contexto larga y alta fidelidad al seguir instrucciones tecnicas sobre multiples archivos a la vez. En este proyecto se uso para: diseno inicial de la arquitectura del pipeline (separacion src/notebooks/scripts), revision de la estrategia anti-leakage en el feature engineering vectorizado (uso de \texttt{groupby + shift(1)}), depuracion del manejo de SHAP cuando la API devuelve un array 3D para XGBoost multiclase (cambio incompatible entre versiones), redaccion estructurada de las secciones tecnicas del informe LaTeX y revision de coherencia entre notebooks, scripts y modulos de \texttt{src/}.
+
+\textbf{Claude Haiku 4.5} (Anthropic) se uso para tareas de iteracion rapida y bajo costo computacional. Es un modelo significativamente mas economico y de baja latencia, optimizado para tareas focalizadas que no exigen razonamiento profundo. En este proyecto se uso para: ajustes puntuales de docstrings y comentarios, formateo de salidas de consola, correccion de errores tipograficos en markdown de notebooks, generacion de mensajes de commit cortos y refinamiento de prompts auxiliares.
+
+\subsection*{Que decidio el equipo y que sugirio la IA}
+
+Todas las decisiones metodologicas (eleccion de F1-macro como metrica principal, split temporal en lugar de aleatorio, filtrado post-1993, mantencion de outliers como datos validos, imputacion de ranking faltante con mediana, criterios de evaluacion del LLM) las tomaron los integrantes del equipo tras analizar los datos. La IA acelero la implementacion proponiendo borradores de codigo y sugerencias de refactorizacion, pero cada fragmento fue revisado, ejecutado y validado manualmente sobre los datos reales antes de incorporarse al proyecto.
+
+El informe se redacto en colaboracion: el contenido tecnico, las cifras, las interpretaciones y la pregunta de investigacion provienen del trabajo del equipo; la IA contribuyo a estructurar las secciones, sugerir conectores narrativos y verificar consistencia entre tablas, figuras y texto. Los resultados experimentales reportados (F1-macro 0.452, AUC 0.707, importancias SHAP, latencias del LLM) provienen exclusivamente de ejecuciones reales del pipeline sobre el dataset.
 
 %% ==========================================================
 \section*{Contribuciones del equipo}
