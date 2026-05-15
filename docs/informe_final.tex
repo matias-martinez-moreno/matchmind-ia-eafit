@@ -117,7 +117,7 @@
   {\small\color{eafitgray}
     Escuela de Ciencias Aplicadas e Ingenieria - Universidad EAFIT\\
     Curso: Inteligencia Artificial - Semestre 2026-1\\
-    \textit{Ventana de entrega: 19-22 de mayo de 2026}\\[4pt]
+    \textit{Entrega: martes 19 de mayo de 2026}\\[4pt]
     \textbf{Repositorio:}
     \url{https://github.com/matias-martinez-moreno/matchmind-ia-eafit}
   }\\[6pt]
@@ -128,8 +128,8 @@
 %% =====================  ABSTRACT  =====================
 \begin{abstract}
 \noindent
-\textbf{Contexto.} La prediccion de resultados de partidos de futbol es un problema clasico de clasificacion multiclase que combina alta varianza estocastica (los resultados son inciertos por naturaleza) con senales sistemicas predecibles (ranking, ventaja de localia, historial entre rivales). Es un caso de estudio ideal porque tiene datos abundantes, etiquetas claras y un techo teorico bajo: incluso los mejores modelos publicados rara vez superan accuracy de 0.60.
-\textbf{Objetivo.} Construir un sistema completo que: (1) prediga el resultado de un partido internacional entre tres clases (victoria local, empate, victoria visitante), (2) explique la prediccion con valores SHAP, y (3) genere un analisis tactico narrativo en espanol mediante un LLM.
+\textbf{Contexto.} La prediccion de resultados de partidos de futbol es un problema clasico de clasificacion multiclase que combina alta varianza estocastica (los resultados son inciertos por naturaleza) con señales sistemicas predecibles (ranking, ventaja de localia, historial entre rivales). Es un caso de estudio ideal porque tiene datos abundantes, etiquetas claras y un techo teorico bajo: incluso los mejores modelos publicados rara vez superan accuracy de 0.60.
+\textbf{Objetivo.} Construir un sistema completo que: (1) prediga el resultado de un partido internacional entre tres clases (victoria local, empate, victoria visitante), (2) explique la prediccion con valores SHAP, y (3) genere un analisis tactico narrativo en español mediante un LLM.
 \textbf{Metodo.} XGBoost entrenado sobre 30,511 partidos posteriores a 1993, con 14 features ingenierizadas (rachas recientes de victorias, promedios moviles de goles, head-to-head historico, ranking FIFA, neutralidad del campo). Explicabilidad con SHAP TreeExplainer. Un LLM (Llama-3.1-8b vía Groq API) recibe los top-5 features SHAP como contexto para producir el reporte narrativo.
 \textbf{Resultados.} F1-macro = 0.452 en test (5,876 partidos 2020-2026), accuracy = 0.549, AUC-OvR = 0.707, frente a un baseline trivial de F1-macro = 0.215. El LLM cumple el 100\% del criterio de mencionar factores SHAP relevantes y respetar el limite de palabras.
 \textbf{Conclusion.} El sistema duplica el F1-macro del baseline. Queda documentado como limitacion principal que el modelo subpredice los empates, fenomeno conocido en la literatura del area.\\[4pt]
@@ -205,9 +205,9 @@ La Figura~\ref{fig:eda_dist} muestra la distribucion del target. La clase mayori
   \label{fig:eda_localia}
 \end{figure}
 
-La Figura~\ref{fig:eda_localia} cuantifica un fenomeno bien conocido en el deporte: jugar en casa aumenta la probabilidad de ganar. Concretamente, el equipo local gana el 50.7\% de las veces cuando el partido se disputa en su pais, pero solo el 43.9\% cuando se juega en cancha neutral. La diferencia de 6.8 puntos porcentuales puede parecer pequena, pero acumulada sobre miles de partidos representa una senal estadisticamente fuerte. Esto justifica incluir la variable booleana \texttt{neutral} como feature del modelo.
+La Figura~\ref{fig:eda_localia} cuantifica un fenomeno bien conocido en el deporte: jugar en casa aumenta la probabilidad de ganar. Concretamente, el equipo local gana el 50.7\% de las veces cuando el partido se disputa en su pais, pero solo el 43.9\% cuando se juega en cancha neutral. La diferencia de 6.8 puntos porcentuales puede parecer pequeña, pero acumulada sobre miles de partidos representa una señal estadisticamente fuerte. Esto justifica incluir la variable booleana \texttt{neutral} como feature del modelo.
 
-\subsection{Hallazgo 3: el ranking FIFA es la senal mas predictiva}
+\subsection{Hallazgo 3: el ranking FIFA es la señal mas predictiva}
 
 \begin{figure}[H]
   \centering
@@ -338,7 +338,7 @@ Evaluacion automatica sobre 20 partidos muestreados uniformemente del test. Cuat
 \begin{itemize}[leftmargin=*,topsep=2pt,itemsep=1pt]
   \item \textbf{Menciona favorito:} si el texto contiene el nombre del equipo predicho como ganador.
   \item \textbf{Menciona factor SHAP:} si menciona al menos una de las palabras clave de los top-3 features (ranking, h2h, racha, goles, etc.).
-  \item \textbf{En espanol:} heuristica de palabras frecuentes en espanol.
+  \item \textbf{En español:} heuristica de palabras frecuentes en español.
   \item \textbf{Cumple limite:} respuesta de 200 palabras o menos.
 \end{itemize}
 
@@ -372,7 +372,7 @@ Random Forest              & 0.583 & 0.425 & 0.714 \\
   \label{fig:comp}
 \end{figure}
 
-XGBoost tuneado obtiene el mejor F1-macro (0.452), \textbf{duplicando el baseline} Dummy (0.215). Una observacion interesante: la diferencia entre LogReg, RandomForest y XGBoost en F1-macro es pequena (0.02-0.03), lo que sugiere que el problema es mayormente lineal en las features que construimos. La ganancia mas grande viene del feature engineering, no del algoritmo.
+XGBoost tuneado obtiene el mejor F1-macro (0.452), \textbf{duplicando el baseline} Dummy (0.215). Una observacion interesante: la diferencia entre LogReg, RandomForest y XGBoost en F1-macro es pequeña (0.02-0.03), lo que sugiere que el problema es mayormente lineal en las features que construimos. La ganancia mas grande viene del feature engineering, no del algoritmo.
 
 \subsection{Analisis de errores: el problema de los empates}
 
@@ -383,7 +383,7 @@ XGBoost tuneado obtiene el mejor F1-macro (0.452), \textbf{duplicando el baselin
   \label{fig:cm}
 \end{figure}
 
-La Figura~\ref{fig:cm} revela una limitacion importante: el modelo \textbf{subpredice los empates}. De 1,360 empates reales, solo predice 578 (el 42\%). El error mas frecuente es ``real = empate, predicho = victoria local'' (837 casos, 31.6\% de todos los errores). Esto es consistente con la literatura: los empates son intrinsecamente dificiles de predecir en futbol porque ocurren cuando dos equipos llegan justo a la misma cantidad de goles, lo cual es una condicion ``de frontera'' poco frecuente \cite{constantinou2013}.
+La Figura~\ref{fig:cm} revela una limitacion importante: el modelo \textbf{subpredice los empates}. De 1,360 empates reales, solo predice 578 (el 42\%). El error mas frecuente es ``real = empate, predicho = victoria local'' (837 casos, 31.6\% de todos los errores). Los empates son intrinsecamente dificiles de predecir en futbol porque ocurren cuando dos equipos llegan justo a la misma cantidad de goles, lo cual es una condicion ``de frontera'' poco frecuente y altamente sensible a la estocasticidad del partido.
 
 \subsection{Explicabilidad SHAP}
 
@@ -394,7 +394,7 @@ La Figura~\ref{fig:cm} revela una limitacion importante: el modelo \textbf{subpr
   \label{fig:shap}
 \end{figure}
 
-La Figura~\ref{fig:shap} confirma que la \textbf{diferencia de ranking FIFA es la feature dominante} (impacto promedio 0.385), seguida del head-to-head historico del visitante (0.190) y la diferencia de puntos FIFA (0.177). Una observacion contraintuitiva: la racha reciente (5 partidos) resulta menos importante de lo esperado. Probablemente esto se debe a que el ranking FIFA ya incorpora indirectamente el desempeno reciente, asi que las dos features se vuelven parcialmente redundantes.
+La Figura~\ref{fig:shap} confirma que la \textbf{diferencia de ranking FIFA es la feature dominante} (impacto promedio 0.385), seguida del head-to-head historico del visitante (0.190) y la diferencia de puntos FIFA (0.177). Una observacion contraintuitiva: la racha reciente (5 partidos) resulta menos importante de lo esperado. Probablemente esto se debe a que el ranking FIFA ya incorpora indirectamente el desempeño reciente, asi que las dos features se vuelven parcialmente redundantes.
 
 \subsection{Evaluacion del LLM}
 
@@ -408,7 +408,7 @@ La Figura~\ref{fig:shap} confirma que la \textbf{diferencia de ranking FIFA es l
 \midrule
 Menciona favorito predicho             & 55\% \\
 Menciona factor SHAP                   & \textbf{100\%} \\
-Respuesta en espanol                   & \textbf{100\%} \\
+Respuesta en español                   & \textbf{100\%} \\
 Cumple limite de palabras (max. 200)  & \textbf{100\%} \\
 \bottomrule
 \end{tabular}
@@ -441,7 +441,7 @@ en ranking y el historial favorable."
 
 Respondiendo la pregunta de investigacion: el modelo XGBoost \textbf{si supera el umbral} planteado (F1-macro 0.452 > 0.40) y duplica el baseline trivial (0.452 vs 0.215). El LLM cumple su rol: el 100\% de los reportes incorpora informacion factual del modelo y mantiene el formato pedido.
 
-El resultado es consistente con la dificultad intrinseca del problema. En la literatura de prediccion de futbol, los modelos sofisticados rara vez superan accuracy de 0.60, incluso usando features de mercado de apuestas \cite{constantinou2013}. Esto sugiere un techo teorico bajo: una parte importante del resultado de un partido es genuinamente aleatoria.
+El resultado es consistente con la dificultad intrinseca del problema. Predecir el resultado de un partido de futbol tiene un techo teorico bajo porque una parte importante del resultado es genuinamente aleatoria: rebotes en el poste, decisiones arbitrales, lesiones puntuales en el minuto 30. Estas fuentes de varianza no estan en los datos y limitan el F1 alcanzable independientemente del algoritmo elegido.
 
 \subsection{Limitaciones}
 
@@ -465,7 +465,7 @@ El resultado es consistente con la dificultad intrinseca del problema. En la lit
 \section{Conclusiones}
 %% ==========================================================
 
-Construimos un sistema end-to-end de prediccion de futbol que combina XGBoost, SHAP y un LLM. El modelo final alcanza F1-macro = 0.452 en test, un 110\% superior al baseline trivial, y el LLM genera reportes coherentes en espanol en menos de 2 segundos. La feature dominante es la diferencia de ranking FIFA, lo cual confirma intuiciones de dominio. La principal limitacion (subprediccion de empates) es esperable dado el caracter ``de frontera'' de la clase y abre oportunidades de trabajo futuro concretas. Todo el codigo es reproducible: descarga de datos, feature engineering, entrenamiento, evaluacion y demo Streamlit estan documentados en el repositorio.
+Construimos un sistema end-to-end de prediccion de futbol que combina XGBoost, SHAP y un LLM. El modelo final alcanza F1-macro = 0.452 en test, un 110\% superior al baseline trivial, y el LLM genera reportes coherentes en español en menos de 2 segundos. La feature dominante es la diferencia de ranking FIFA, lo cual confirma intuiciones de dominio. La principal limitacion (subprediccion de empates) es esperable dado el caracter ``de frontera'' de la clase y abre oportunidades de trabajo futuro concretas. Todo el codigo es reproducible: descarga de datos, feature engineering, entrenamiento, evaluacion y demo Streamlit estan documentados en el repositorio.
 
 %% ==========================================================
 \section*{Uso de IA Generativa en el Desarrollo}
@@ -475,7 +475,7 @@ Adicional al componente generativo del sistema construido (Llama-3.1-8b via Groq
 
 \subsection*{Modelos de asistencia empleados}
 
-\textbf{Claude Opus 4.7} (Anthropic) se reservo para tareas de razonamiento extenso y decisiones tecnicas de alto impacto. Es el modelo mas capaz de la familia Claude 4.X, con razonamiento extendido, ventana de contexto larga y alta fidelidad al seguir instrucciones tecnicas sobre multiples archivos a la vez. En este proyecto se uso para: diseno inicial de la arquitectura del pipeline (separacion src/notebooks/scripts), revision de la estrategia anti-leakage en el feature engineering vectorizado (uso de \texttt{groupby + shift(1)}), depuracion del manejo de SHAP cuando la API devuelve un array 3D para XGBoost multiclase (cambio incompatible entre versiones), redaccion estructurada de las secciones tecnicas del informe LaTeX y revision de coherencia entre notebooks, scripts y modulos de \texttt{src/}.
+\textbf{Claude Opus 4.7} (Anthropic) se reservo para tareas de razonamiento extenso y decisiones tecnicas de alto impacto. Es el modelo mas capaz de la familia Claude 4.X, con razonamiento extendido, ventana de contexto larga y alta fidelidad al seguir instrucciones tecnicas sobre multiples archivos a la vez. En este proyecto se uso para: diseño inicial de la arquitectura del pipeline (separacion src/notebooks/scripts), revision de la estrategia anti-leakage en el feature engineering vectorizado (uso de \texttt{groupby + shift(1)}), depuracion del manejo de SHAP cuando la API devuelve un array 3D para XGBoost multiclase (cambio incompatible entre versiones), redaccion estructurada de las secciones tecnicas del informe LaTeX y revision de coherencia entre notebooks, scripts y modulos de \texttt{src/}.
 
 \textbf{Claude Haiku 4.5} (Anthropic) se uso para tareas de iteracion rapida y bajo costo computacional. Es un modelo significativamente mas economico y de baja latencia, optimizado para tareas focalizadas que no exigen razonamiento profundo. En este proyecto se uso para: ajustes puntuales de docstrings y comentarios, formateo de salidas de consola, correccion de errores tipograficos en markdown de notebooks, generacion de mensajes de commit cortos y refinamiento de prompts auxiliares.
 
@@ -511,7 +511,7 @@ Samuel Herrera & Integracion LLM, evaluacion cuantitativa, informe LaTeX, docume
 \end{itemize}
 
 %% ==========================================================
-%% REFERENCIAS (5 referencias curadas, todas reales y verificables)
+%% REFERENCIAS (4 referencias, todas citadas en el texto)
 %% ==========================================================
 \begin{thebibliography}{99}
 
@@ -526,11 +526,6 @@ Lundberg, S. M., y Lee, S. I. (2017).
 \textit{A Unified Approach to Interpreting Model Predictions}.
 Advances in Neural Information Processing Systems (NeurIPS), 30.
 \url{https://arxiv.org/abs/1705.07874}
-
-\bibitem{constantinou2013}
-Constantinou, A. C., Fenton, N. E., y Neil, M. (2013).
-\textit{Profiting from an inefficient association football gambling market: Prediction, risk and uncertainty using Bayesian networks}.
-Knowledge-Based Systems, 50, 60-86.
 
 \bibitem{kaggle_results}
 Mart, J. (2024).
@@ -558,7 +553,7 @@ A continuacion se muestra el prompt enviado al LLM para cada partido. Las variab
 \begin{lstlisting}[caption={Prompt completo (PROMPT\_PRE\_MATCH).}, basicstyle=\ttfamily\tiny]
 Eres un analista tactico de futbol experto.
 Analiza el siguiente partido internacional y
-genera un pronostico narrativo en espanol
+genera un pronostico narrativo en español
 (MAXIMO 150 palabras).
 
 DATOS DEL PARTIDO:
@@ -585,7 +580,7 @@ INSTRUCCIONES:
 2. Menciona 1-2 factores clave decisivos.
 3. Termina con una prediccion narrativa.
 4. NO inventes datos fuera del contexto.
-5. Tono: profesional, conciso, espanol.
+5. Tono: profesional, conciso, español.
 \end{lstlisting}
 
 \section{Apendice B: Snippet de feature engineering vectorizado}
