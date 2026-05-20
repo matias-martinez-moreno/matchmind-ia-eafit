@@ -8,8 +8,8 @@ Predicción de resultados de partidos internacionales de fútbol (victoria local
 
 ## Video
 
-1:
-2:
+1. [video en YouTube](https://youtu.be/ax)
+2. [video en YouTube](https://youtu.be/ax)
 ---
 
 ## Descripción
