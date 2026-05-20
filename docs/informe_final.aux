@@ -1,0 +1,87 @@
+\relax 
+\providecommand\babel@aux[2]{}
+\@nameuse{bbl@beforestart}
+\catcode `"\active 
+\catcode `<\active 
+\catcode `>\active 
+\@nameuse{es@quoting}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{kaggle_results}
+\citation{kaggle_fifa}
+\babel@aux{spanish}{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduccion}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Datos y Exploracion (EDA)}{2}{section.2}\protected@file@percent }
+\newlabel{sec:eda}{{2}{2}{Datos y Exploracion (EDA)}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Descripcion del dataset}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Resumen del dataset principal tras limpieza.}}{2}{table.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:dataset}{{1}{2}{Resumen del dataset principal tras limpieza}{table.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Hallazgo 1: imbalance moderado del target}{2}{subsection.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Distribucion del resultado del partido: 48.9\% victorias locales, 22.7\% empates, 28.4\% victorias visitantes. Calculado sobre 49,215 partidos historicos limpios.}}{2}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:eda_dist}{{1}{2}{Distribucion del resultado del partido: 48.9\% victorias locales, 22.7\% empates, 28.4\% victorias visitantes. Calculado sobre 49,215 partidos historicos limpios}{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Hallazgo 2: ventaja de localia cuantificada}{2}{subsection.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Distribucion del resultado segun si el campo es neutral o del equipo local. La ventaja de jugar en casa se traduce en +6.8 puntos porcentuales de victoria.}}{2}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:eda_localia}{{2}{2}{Distribucion del resultado segun si el campo es neutral o del equipo local. La ventaja de jugar en casa se traduce en +6.8 puntos porcentuales de victoria}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Hallazgo 3: el ranking FIFA es la señal mas predictiva}{2}{subsection.2.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Probabilidad de resultado segun la diferencia de ranking FIFA. Cuando el local es ``mucho mejor'' en el ranking, gana el 80\% de las veces; en el extremo opuesto, gana el visitante el 62\%.}}{2}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:eda_rank}{{3}{2}{Probabilidad de resultado segun la diferencia de ranking FIFA. Cuando el local es ``mucho mejor'' en el ranking, gana el 80\% de las veces; en el extremo opuesto, gana el visitante el 62\%}{figure.caption.4}{}}
+\citation{chen2016}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Hallazgo 4: heatmap de correlaciones}{3}{subsection.2.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Matriz de correlacion entre features numericas. \texttt  {rank\_diff} tiene la correlacion mas alta con el resultado (0.47).}}{3}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:eda_heatmap}{{4}{3}{Matriz de correlacion entre features numericas. \texttt {rank\_diff} tiene la correlacion mas alta con el resultado (0.47)}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Otros hallazgos relevantes}{3}{subsection.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Arquitectura del Sistema}{3}{section.3}\protected@file@percent }
+\newlabel{sec:arq}{{3}{3}{Arquitectura del Sistema}{section.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Pipeline end-to-end de MatchMind.}}{3}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:pipeline}{{5}{3}{Pipeline end-to-end de MatchMind}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Componente 1: feature engineering vectorizado}{3}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Componente 2: modelo XGBoost}{3}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Por que XGBoost y no una red neuronal}{3}{subsubsection.3.2.1}\protected@file@percent }
+\citation{lundberg2017}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Componente 3: explicabilidad con SHAP}{4}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Componente 4: LLM (Llama-3.1-8b vía Groq)}{4}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Metodologia}{4}{section.4}\protected@file@percent }
+\newlabel{sec:metodo}{{4}{4}{Metodologia}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Configuracion experimental}{4}{subsection.4.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Hiperparametros del XGBoost final (tras tuning).}}{4}{table.caption.7}\protected@file@percent }
+\newlabel{tab:hparams}{{2}{4}{Hiperparametros del XGBoost final (tras tuning)}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Estrategia de validacion: split temporal}{4}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Comparacion de modelos}{4}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Evaluacion del LLM}{4}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Resultados}{4}{section.5}\protected@file@percent }
+\newlabel{sec:res}{{5}{4}{Resultados}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Comparacion de modelos}{4}{subsection.5.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Metricas en test set (5,876 partidos, 2020-2026).}}{4}{table.caption.8}\protected@file@percent }
+\newlabel{tab:resultados}{{3}{4}{Metricas en test set (5,876 partidos, 2020-2026)}{table.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Comparacion visual de los cuatro modelos en test set.}}{5}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:comp}{{6}{5}{Comparacion visual de los cuatro modelos en test set}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Analisis de errores: el problema de los empates}{5}{subsection.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Matriz de confusion del XGBoost tuneado en test.}}{5}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:cm}{{7}{5}{Matriz de confusion del XGBoost tuneado en test}{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Explicabilidad SHAP}{5}{subsection.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Importancia global por SHAP para la clase ``local gana''. La diferencia de ranking FIFA es la feature dominante.}}{5}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:shap}{{8}{5}{Importancia global por SHAP para la clase ``local gana''. La diferencia de ranking FIFA es la feature dominante}{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Evaluacion del LLM}{5}{subsection.5.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Evaluacion automatica del LLM sobre 20 partidos.}}{5}{table.caption.12}\protected@file@percent }
+\newlabel{tab:llm}{{4}{5}{Evaluacion automatica del LLM sobre 20 partidos}{table.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Ejemplo cualitativo}{5}{subsection.5.5}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces Reporte LLM para Brasil vs Argentina, Copa America 2021.}}{5}{lstlisting.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discusion}{6}{section.6}\protected@file@percent }
+\newlabel{sec:disc}{{6}{6}{Discusion}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Interpretacion}{6}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Limitaciones}{6}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Trabajo futuro}{6}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusiones}{6}{section.7}\protected@file@percent }
+\newlabel{sec:ia_dev}{{7}{6}{}{section.7}{}}
+\bibcite{chen2016}{1}
+\bibcite{lundberg2017}{2}
+\bibcite{kaggle_results}{3}
+\bibcite{kaggle_fifa}{4}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Apendice A: Prompt completo del LLM}{7}{appendix.Alph1}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces Prompt completo (PROMPT\_PRE\_MATCH).}}{7}{lstlisting.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Apendice B: Snippet de feature engineering vectorizado}{7}{appendix.Alph2}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}{\ignorespaces Vectorizacion de racha reciente.}}{7}{lstlisting.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Apendice C: Reproducibilidad}{8}{appendix.Alph3}\protected@file@percent }
+\gdef \@abspage@last{8}
