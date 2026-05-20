@@ -6,6 +6,12 @@ Predicción de resultados de partidos internacionales de fútbol (victoria local
 
 ---
 
+## Video
+
+1:
+2:
+---
+
 ## Descripción
 
 MatchMind es un sistema de predicción de partidos de fútbol que combina:
@@ -303,8 +309,7 @@ features = pd.read_csv('data/processed/features.csv')
 | Samuel Herrera | 1000358613 | LLM, Streamlit, Informe |
 
 Proyecto Final - Inteligencia Artificial - EAFIT 2026-1  
-Profesor: [Nombre del Profesor]  
-Entrega: 19-22 de mayo de 2026
+Profesor: Jorge Ivan Padilla Buritica
 
 ---
 
@@ -316,8 +321,4 @@ Entrega: 19-22 de mayo de 2026
 - XGBoost: Chen & Guestrin (2016). "XGBoost: A Scalable Tree Boosting System"
 - Groq API: [https://console.groq.com](https://console.groq.com)
 
----
 
-## Licencia
-
-Proyecto académico. Libre para uso educativo.
